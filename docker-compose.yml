@@ -48,6 +48,18 @@ services:
       - spring_rabbitmq_host=rabbitmq-container
       - spring_rabbitmq_port=5672
 
+  ui:
+    container_name: react_frontend
+    build:
+      context: ./src/ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/ui/src:/app/src
+    environment:
+      - WATCHPACK_POLLING=true
+
 networks:
   internal:
     name: internal
