@@ -1,0 +1,33 @@
+.Basket-item {
+    color: white;
+    padding: 5px;
+}
+
+.Flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+.Price-and-details {
+    color: #c1af00;
+    text-indent: 50px;
+}
+
+.Monitor-remove-from-basket {
+    background-color: #c1af00;
+    height: 30px;
+    color: black;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.Monitor-remove-from-basket:hover,
+.Monitor-remove-from-basket:active {
+    color: white;
+}

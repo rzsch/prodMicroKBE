@@ -1,0 +1,91 @@
+.Item-area {
+    width: 260px;
+    height: 260px;
+}
+
+.Monitor-frame {
+    background-color: #c0c0c0;
+    width: 240px;
+    height: 170px;
+    padding: 5px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.Monitor-screen {
+    background-color: #000000;
+    width: 240px;
+    /* height with 16:9 picture format */
+    height: calc(240px/16*9);
+}
+
+.Monitor-brand {
+    color: white;
+    float: left;
+    padding: 5px;
+}
+
+.Monitor-size {
+    width: fit-content;
+    height: 65px;
+    color: white;
+    padding: 5px;
+    padding-top: 30px;
+    transform: rotate(330deg);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.Monitor-price {
+    color: #72c100;
+    float: right;
+    padding: 5px;
+}
+
+.Monitor-add-to-basket {
+    background-color: #72c100;
+    color: black;
+    padding: 5px;
+    float: right;
+    margin-right: -10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.Monitor-add-to-basket:hover,
+.Monitor-add-to-basket:active {
+    color: white;
+}
+
+.Monitor-io-ports {
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Monitor-stand {
+    background-color: #c0c0c0;
+    width: 30px;
+    height: 20px;
+    margin: auto;
+}
+
+.Monitor-base {
+    background-color: #c0c0c0;
+    width: 100px;
+    height: 5px;
+    border-radius: 5px 5px 0px 0px;
+    margin: auto;
+}
+
+.Monitor-name-and-info {
+    color: white;
+    text-align: center;
+    padding: 2px;
+}

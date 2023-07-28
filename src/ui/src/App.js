@@ -1,21 +1,12 @@
 import './App.css';
+import ProductArea from './components/mainPage/ProductArea.js'
+import BasketArea from './components/mainPage/BasketArea.js'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <BasketArea/>
+        <ProductArea/>
     </div>
   );
 }
