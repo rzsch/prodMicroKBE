@@ -1,11 +1,11 @@
 import './App.css';
-import ProductArea from './components/mainPage/ProductArea.js'
-import BasketArea from './components/mainPage/BasketArea.js'
+import ProductArea from './components/factories/productFactory.js'
+import Header from './components/header/header.js'
 
 function App() {
   return (
     <div className="App">
-        <BasketArea/>
+        <Header/>
         <ProductArea/>
     </div>
   );

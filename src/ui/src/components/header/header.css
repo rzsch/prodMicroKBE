@@ -1,0 +1,112 @@
+.navigation-bar {
+    background-color: #d6ff99;
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+    z-index: 1;
+}
+
+.burger-menu {
+    height: 100%;
+    width: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.burger-menu-line {
+    width: 40px;
+    height: 5px;
+    background-color: black;
+}
+
+.to-shopping-cart {
+    background-color: #fff599;
+    color: black;
+    height: 40px;
+    width: 50px;
+    padding: 5px;
+    float: right;
+    margin-top: -45px;
+    margin-right: 20px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+
+/* Menu animations*/
+.menu {
+    height: 100vh;
+    width: 260px;
+    background-color: #d6ff99   ;
+    position: absolute;
+    transition: margin-left 0.5s;
+}
+
+.menu-hidden {
+   margin-left: -260px;
+}
+
+.menu-visible {
+    margin-left: 0px;
+}
+
+.burger-menu-line.clicked:nth-child(1) {
+    transform: translate(0px, 13px) rotate(45deg);
+    transition: ease-out 0.5s;
+}
+
+.burger-menu-line.clicked:nth-child(2) {
+    transform: scale(0.1);
+    transition: ease-out 0.5s;
+}
+
+.burger-menu-line.clicked:nth-child(3) {
+    transform: translate(0px, -12px) rotate(-45deg);
+    transition: ease-out 0.5s;
+}
+
+.burger-menu-line.not-clicked {
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: ease-out 0.5s;
+}
+
+.burger-menu:hover .burger-menu-line,
+.burger-menu:active .burger-menu-line {
+    border: solid;
+    border-width: 1px;
+}
+
+
+/* Shipping-Cart animations */
+.shopping-cart-svg {
+    stroke: black;
+    stroke-width: 3;
+    fill: transparent;
+}
+
+.shopping-cart-svg:hover,
+.shopping-cart-svg:active {
+    stroke-width: 5;
+}
+
+.cart {
+    height: 100vh;
+    width: 260px;
+    background-color: #fff599;
+    position: absolute;
+    right: 0px;
+    transition: margin-right 0.5s;
+}
+
+.cart-hidden {
+   margin-right: -260px;
+}
+
+.cart-visible {
+    margin-right: 0px;
+}

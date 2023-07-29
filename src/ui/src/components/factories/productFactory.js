@@ -1,8 +1,8 @@
-import ItemBox from './itemTemplates/ItemBox.js'
-import './style.css';
+import ItemBox from './itemTemplates/itemBox.js'
+import './productFactory.css';
 
 
-function ProductArea() {
+function ProductFactory() {
     const monitors: MonitorArray = [
         {id: 1, name: 'ASUS ExpertCenter C2223HE', price: 270, brand: 'Asus', size: 21.45, hdmi: 1, dp: 0, vga: 0, dvi: 0, usb: 0, aux: 1, link: "https://www.asus.com/displays-desktops/monitors/business/asus-expertcenter-c2223he/"},
         {id: 2, name: 'Designo MX279HS', price: 240, brand: 'Asus', size: 27, hdmi: 2, dp: 0, vga: 1, dvi: 0, usb: 0, aux: 1, link: "https://www.asus.com/displays-desktops/monitors/designo/designo-mx279hs/"},
@@ -14,10 +14,10 @@ function ProductArea() {
     ];
 
     return (
-        <div className="Product-area">
+        <div className="product-area">
             {monitors.map(monitor => <ItemBox values={monitor}/>)}
         </div>
    );
 }
 
-export default ProductArea;
+export default ProductFactory;

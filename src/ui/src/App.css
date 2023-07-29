@@ -1,5 +1,13 @@
-.App {
-  background-color: #282c34;
-  height: 100vh;
-  display: flex;
+body {
+    background-color: #f5ffe5;
+}
+
+a:link {
+    color: #6bb36b;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
 }

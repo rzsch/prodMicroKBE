@@ -1,24 +1,24 @@
-.Basket-item {
-    color: white;
+.cart-item {
     padding: 5px;
 }
 
-.Flex-container {
+.flex-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    padding-right: 15px;
     border-bottom-style: solid;
-    border-color: white;
+    border-color: #b4a200;
     border-width: 1px;
 }
 
-.Price-and-details {
-    color: #c1af00;
+.price-and-details {
+    color: #b4a200;
     text-indent: 50px;
 }
 
-.Monitor-remove-from-basket {
+.remove-from-cart {
     background-color: #c1af00;
     height: 30px;
     color: black;
@@ -27,7 +27,7 @@
     border-radius: 5px;
 }
 
-.Monitor-remove-from-basket:hover,
-.Monitor-remove-from-basket:active {
+.remove-from-cart:hover,
+.remove-from-cart:active {
     color: white;
 }

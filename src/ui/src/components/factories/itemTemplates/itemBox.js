@@ -1,24 +1,24 @@
-import './ItemBox.css';
+import './itemBox.css';
 
 function ItemBox(props) {
     return (
-        <div className="Item-area">
-            <div className="Monitor-frame">
-                <div className="Monitor-screen">
-                    <div className="Monitor-brand">
+        <div className="item-area">
+            <div className="monitor-frame">
+                <div className="monitor-screen">
+                    <div className="monitor-brand">
                         {props.values.brand}
                     </div>
-                    <div className="Monitor-price">
+                    <div className="monitor-price">
                         {props.values.price} €
                     </div>
-                    <div className="Monitor-size">
+                    <div className="monitor-size">
                         &larr; {props.values.size} &rarr;
                     </div>
-                    <button className="Monitor-add-to-basket">
-                        add to basket
+                    <button className="monitor-add-to-cart">
+                        add to cart
                     </button>
                 </div>
-                <div className="Monitor-io-ports">
+                <div className="monitor-io-ports">
                     <div>HDMI<br/>{props.values.hdmi}</div>
                     <div>DP<br/>{props.values.dp}</div>
                     <div>VGA<br/>{props.values.vga}</div>
@@ -26,11 +26,11 @@ function ItemBox(props) {
                     <div>USB<br/>{props.values.usb}</div>
                     <div>AUX<br/>{props.values.aux}</div>
                 </div>
-                <div className="Monitor-stand">
+                <div className="monitor-stand">
                 </div>
-                <div className="Monitor-base">
+                <div className="monitor-base">
                 </div>
-                <div className="Monitor-name-and-info">
+                <div className="monitor-name-and-info">
                     {props.values.name}<br/>
                     <a href={props.values.link}>More Details</a>
                 </div>

@@ -1,15 +1,15 @@
-import './ItemList.css';
+import './itemList.css';
 
 function ItemList(props) {
     return (
-        <div className="Basket-item">
+        <div className="cart-item">
             <div>{props.values.name}</div>
-            <div className="Flex-container">
-                <div className="Price-and-details">
+            <div className="flex-container">
+                <div className="price-and-details">
                     Price: {props.values.price} €<br/>
                     <a href={props.values.link}>More Details</a>
                 </div>
-                <button className="Monitor-remove-from-basket">
+                <button className="remove-from-cart">
                     remove
                 </button>
             </div>
