@@ -14,7 +14,7 @@ function ItemBox(props) {
                     <div className="monitor-size">
                         &larr; {props.values.size} &rarr;
                     </div>
-                    <button className="monitor-add-to-cart">
+                    <button className="monitor-add-to-cart" onClick={() => props.addToCart(props.values.id)}>
                         add to cart
                     </button>
                 </div>

@@ -11,17 +11,36 @@
     text-align: center;
 }
 
-.cart-total-price {
-    color: #c1af00;
+.cart-total {
     width: 230px;
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
-    text-align: center;
     border-top-style: solid;
-    border-color: b4a200;
+    border-color: #b4a200;
     border-width: 1px;
     margin: auto;
+}
+
+.remove-all-from-cart {
+    background-color: #c1af00;
+    height: 30px;
+    color: black;
+    padding: 5px;
+    float: right;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.remove-all-from-cart:hover,
+.remove-all-from-cart:active {
+    color: white;
+}
+
+.cart-total-price {
+    color: #c1af00;
+    text-align: center;
 }
 
 .buy-cart {

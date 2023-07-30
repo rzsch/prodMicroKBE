@@ -23,18 +23,27 @@
     background-color: black;
 }
 
-.to-shopping-cart {
+.shopping-cart-amount {
     background-color: #fff599;
-    color: black;
+    min-width: 65px;
     height: 40px;
-    width: 50px;
-    padding: 5px;
     float: right;
     margin-top: -45px;
     margin-right: 20px;
     border: solid;
     border-width: 1px;
-    border-radius: 5px;
+    border-radius: 20px 5px 5px 20px;
+    line-height: 40px;
+    padding-left: 5px;
+}
+
+.to-shopping-cart {
+    background-color: #fff599;
+    height: 40px;
+    width: 50px;
+    padding: 5px;
+    float: right;
+    border-radius: 0px 5px 5px 0px;
 }
 
 
