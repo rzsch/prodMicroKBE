@@ -1,0 +1,39 @@
+.profile-container {
+    padding: 5px;
+}
+
+.login-button {
+    background-color: transparent;
+    width: 220px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: solid;
+    border-radius: 10px;
+    border-color: #6bb36b;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.login-button:hover,
+.login-button:active {
+    background-color: #6bb36b;
+}
+
+.logout-button {
+    background-color: transparent;
+    width: 220px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: solid;
+    border-radius: 10px;
+    border-color: #b4a200;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.logout-button:hover,
+.logout-button:active {
+    background-color: #b4a200;
+}

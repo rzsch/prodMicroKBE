@@ -4,6 +4,7 @@ import Header from './components/header/Header.js'
 import {useState} from 'react';
 import CartContext from './components/contexts/CartContext.js'
 import ProductContext from './components/contexts/ProductContext.js'
+import UserContext from './components/contexts/UserContext.js'
 
 function App() {
     const products = [
@@ -20,14 +21,24 @@ function App() {
 
     const [shoppingCart, setShoppingCart] = useState(productsInCart)
 
+    const user = [
+        {id: 1, name: "guest", rights: "none"},
+        {id: 2, name: "user", rights: "buy"},
+        {id: 3, name: "admin", rights: "edit"}
+    ]
+
+    const [currentUser, setCurrentUser] = useState(user[0])
+
     return (
         <div className="App">
-            <CartContext.Provider value={{shoppingCart, setShoppingCart}}>
-                <Header/>
-                <ProductContext.Provider value={products}>
-                    <ProductFactory/>
-                </ProductContext.Provider>
-            </CartContext.Provider>
+            <UserContext.Provider value={{currentUser, setCurrentUser}}>
+                <CartContext.Provider value={{shoppingCart, setShoppingCart}}>
+                    <Header/>
+                    <ProductContext.Provider value={products}>
+                        <ProductFactory/>
+                    </ProductContext.Provider>
+                </CartContext.Provider>
+            </UserContext.Provider>
         </div>
     );
 }
