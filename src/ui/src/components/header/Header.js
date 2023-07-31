@@ -1,11 +1,14 @@
-import './header.css';
-import CartFactory from '../factories/cartFactory.js'
-import Menu from '../menu/menu.js'
-import {useState} from 'react';
+import './Header.css';
+import CartFactory from '../factories/CartFactory.js'
+import Menu from '../menu/Menu.js'
+import {useState, useContext} from 'react';
+import CartContext from '../contexts/CartContext.js'
 
 function Header(props) {
 
-    let monitorsInCart = props.inCart
+    const {shoppingCart, } = useContext(CartContext)
+
+    let monitorsInCart = shoppingCart
 
     let productsInCart = 0
     for(let index = 0; index < monitorsInCart.length; index++) {
@@ -68,7 +71,7 @@ function Header(props) {
                 <Menu/>
             </div>
             <div className={cart}>
-                <CartFactory {...props}/>
+                <CartFactory/>
             </div>
         </div>
    );

@@ -1,10 +1,10 @@
-import './menu.css';
+import './Menu.css';
 
 function Menu() {
   return (
     <div>
         <div className="menu-title">
-            User
+            Profile
         </div>
         <div className="menu-content">
             <p>You are currently not logged in.</p>

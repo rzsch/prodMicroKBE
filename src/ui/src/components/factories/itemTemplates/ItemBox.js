@@ -1,4 +1,4 @@
-import './itemBox.css';
+import './ItemBox.css';
 
 function ItemBox(props) {
     return (

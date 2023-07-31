@@ -1,7 +1,9 @@
 import './App.css';
-import ProductFactory from './components/factories/productFactory.js'
-import Header from './components/header/header.js'
+import ProductFactory from './components/factories/ProductFactory.js'
+import Header from './components/header/Header.js'
 import {useState} from 'react';
+import CartContext from './components/contexts/CartContext.js'
+import ProductContext from './components/contexts/ProductContext.js'
 
 function App() {
     const products = [
@@ -18,66 +20,16 @@ function App() {
 
     const [shoppingCart, setShoppingCart] = useState(productsInCart)
 
-    function addNewProductToCart(idToAdd) {
-        let indexOfProductToAdd = products.findIndex(product => product.id === idToAdd)
-        let itemToAddToCart = products[indexOfProductToAdd]
-        itemToAddToCart.amount = 1
-        return itemToAddToCart
-    }
-
-    function isProductAlreadyInCart(indexInCart) {
-        const notInCart = -1
-        return indexInCart === notInCart
-    }
-
-    function addToCart(idToAdd) {
-        let newShoppingCart = shoppingCart.slice(0)
-        let indexInCart = shoppingCart.findIndex(product => product.id === idToAdd)
-        if (isProductAlreadyInCart(indexInCart)) {
-            let itemToAddToCart = addNewProductToCart(idToAdd)
-            newShoppingCart.push(itemToAddToCart)
-        } else {
-            let newAmount = shoppingCart[indexInCart].amount + 1
-            newShoppingCart[indexInCart].amount = newAmount
-        }
-        setShoppingCart(newShoppingCart)
-    }
-
-    function isAmountOne(amount) {
-        return amount === 1
-    }
-
-    function removeFromCart(idToRemove) {
-        let indexInCart = shoppingCart.findIndex(product => product.id === idToRemove)
-        let amountInCart = shoppingCart[indexInCart].amount
-        if(isAmountOne(amountInCart)) {
-            setShoppingCart(shoppingCart.filter(product => product.id !== idToRemove))
-        } else {
-            let newShoppingCart = shoppingCart.slice(0)
-            newShoppingCart[indexInCart].amount = amountInCart - 1
-            setShoppingCart(newShoppingCart)
-        }
-
-    }
-
-    function clearCart() {
-        let emptyList = [];
-        setShoppingCart(emptyList)
-    }
-
-  return (
-    <div className="App">
-        <Header
-            inCart={shoppingCart}
-            removeFromCart={removeFromCart}
-            clearCart={clearCart}
-        />
-        <ProductFactory
-            products={products}
-            addToCart={addToCart}
-        />
-    </div>
-  );
+    return (
+        <div className="App">
+            <CartContext.Provider value={{shoppingCart, setShoppingCart}}>
+                <Header/>
+                <ProductContext.Provider value={products}>
+                    <ProductFactory/>
+                </ProductContext.Provider>
+            </CartContext.Provider>
+        </div>
+    );
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import './itemList.css';
+import './ItemList.css';
 
 function ItemList(props) {
     let priceTimesAmount = props.values.price * props.values.amount
