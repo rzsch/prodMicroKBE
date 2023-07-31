@@ -49,10 +49,11 @@
 
 /* Menu animations*/
 .menu {
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 260px;
     background-color: #d6ff99   ;
     position: absolute;
+    overflow: auto;
     transition: margin-left 0.5s;
 }
 
@@ -104,11 +105,12 @@
 }
 
 .cart {
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 260px;
     background-color: #fff599;
     position: absolute;
     right: 0px;
+    overflow: auto;
     transition: margin-right 0.5s;
 }
 
