@@ -7,8 +7,10 @@
 }
 
 .burger-menu {
+    background-color: transparent;
+    border: none;
     height: 100%;
-    width: 50px;
+    width: 60px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -87,8 +89,7 @@
 
 .burger-menu:hover .burger-menu-line,
 .burger-menu:active .burger-menu-line {
-    border: solid;
-    border-width: 1px;
+    background-color: #6BB36B;
 }
 
 
@@ -101,7 +102,7 @@
 
 .shopping-cart-svg:hover,
 .shopping-cart-svg:active {
-    stroke-width: 5;
+    stroke: #b4a200;
 }
 
 .cart {

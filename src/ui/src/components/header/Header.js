@@ -49,11 +49,11 @@ function Header(props) {
 
     return (
         <div className="navigation-bar">
-            <div className="burger-menu" onClick={toggleMenu}>
+            <button className="burger-menu" onClick={toggleMenu}>
                 <div className={burgerMenuLine}></div>
                 <div className={burgerMenuLine}></div>
                 <div className={burgerMenuLine}></div>
-            </div>
+            </button>
             <div className="shopping-cart-amount">
                 {productsInCart}
                 <button className="to-shopping-cart" onClick={toggleCart}>
