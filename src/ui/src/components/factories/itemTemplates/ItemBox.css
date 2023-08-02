@@ -59,6 +59,21 @@
     color: white;
 }
 
+.edit-product {
+    background-color: #b4a200;
+    color: black;
+    padding: 5px;
+    float: right;
+    margin-right: -10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.edit-product:hover,
+.edit-product:active {
+    color: white;
+}
+
 .monitor-io-ports {
     color: black;
     font-size: 14px;

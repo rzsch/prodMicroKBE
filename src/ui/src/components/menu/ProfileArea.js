@@ -1,13 +1,13 @@
 import './ProfileArea.css'
-import {useState, useContext} from 'react';
+import {useContext} from 'react';
+import PopupContext from '../contexts/PopupContext.js'
 import UserContext from '../contexts/UserContext.js'
-import LoginContext from '../contexts/LoginContext.js'
-import LoginPopup from './LoginPopup.js'
+import LoginPopup from '../popups/LoginPopup.js'
 
 function ProfileArea() {
 
     const {currentUser, setCurrentUser} = useContext(UserContext)
-    const [loginPopupHidden, setLoginPopupHidden] = useState(true)
+    const setPopupPlaceholder = useContext(PopupContext)
 
     function isNotLoggedIn() {
         let rightsIfNotLoggedIn = "none"
@@ -24,8 +24,7 @@ function ProfileArea() {
     }
 
     function login() {
-        setLoginPopupHidden(false)
-        /*setCurrentUser({id: 2, name: "user", rights: "buy"})*/
+        setPopupPlaceholder(<LoginPopup/>)
     }
 
     function logout() {
@@ -48,27 +47,14 @@ function ProfileArea() {
         }
     }
 
-    function getLoginPopup() {
-        if(loginPopupHidden) {
-            return null
-        } else {
-            return (
-                <LoginContext.Provider value={{setCurrentUser, setLoginPopupHidden}}>
-                    <LoginPopup exit={setLoginPopupHidden}/>
-                </LoginContext.Provider>
-            );
-        }
-    }
 
     let greeting = getGreeting()
     let button = getButton()
-    let loginPopupPlaceholder = getLoginPopup()
 
     return (
         <div className="profile-container">
             <p>{greeting}</p>
             {button}
-            {loginPopupPlaceholder}
         </div>
     );
 }

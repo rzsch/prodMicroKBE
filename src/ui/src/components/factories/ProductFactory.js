@@ -8,7 +8,7 @@ import ProductContext from '../contexts/ProductContext.js'
 function ProductFactory() {
 
     const {shoppingCart, setShoppingCart} = useContext(CartContext)
-    const products = useContext(ProductContext)
+    const {products, } = useContext(ProductContext)
 
     let monitors = products
 

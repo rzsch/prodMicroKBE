@@ -1,26 +1,40 @@
 import './LoginPopup.css'
 import {useContext} from 'react';
-import LoginContext from '../contexts/LoginContext.js'
+import UserContext from '../contexts/UserContext.js'
+import PopupContext from '../contexts/PopupContext.js'
 
 function LoginPopup() {
 
-    const {setCurrentUser, setLoginPopupHidden} = useContext(LoginContext)
+    const setPopupPlaceholder = useContext(PopupContext)
+    const {setCurrentUser} = useContext(UserContext)
 
     const login = (event) => {
+        event.preventDefault()
         const username = event.target.username.value
         if(username === "admin") {
-            setCurrentUser({id: 3, name: "admin", rights: "edit"})
+            setCurrentUser({id: 3, name: "admin", rights: "edit-all"})
+        } else if (username === "asus") {
+            setCurrentUser({id: 4, name: "asus", rights: "edit"})
+        } else if (username === "sony") {
+            setCurrentUser({id: 5, name: "sony", rights: "edit"})
+        } else if (username === "lg") {
+            setCurrentUser({id: 6, name: "lg", rights: "edit"})
         } else {
             setCurrentUser({id: 2, name: "user", rights: "buy"})
         }
-        setLoginPopupHidden(true)
+        setPopupPlaceholder(null)
+
+    }
+
+    function closePopup() {
+        setPopupPlaceholder(null)
     }
 
     return (
         <div className="blurred-background">
             <div className="form-container">
                 <div className="form-header">
-                    <button className="close-popup" onClick={() => setLoginPopupHidden(true)} >
+                    <button className="close-popup" onClick={closePopup}>
                         <div className="close-popup-x"></div>
                         <div className="close-popup-x"></div>
                     </button>
