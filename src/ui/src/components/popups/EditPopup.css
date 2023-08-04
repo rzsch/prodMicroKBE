@@ -14,10 +14,13 @@
 .form-container {
     background-color: #d6ff99;
     width: 260px;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .form-header {
     background-color: #6BB36B;
+    text-align: left;
 }
 
 .close-popup {
@@ -52,10 +55,20 @@
     font-size: 20px;
 }
 
-.login-input {
+.edit-input {
     width: 200px;
     padding: 5px;
     border-radius: 5px;
+}
+
+.edit-ports {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-port {
+    width: 30px;
 }
 
 .submit-button {
@@ -73,3 +86,20 @@
 .submit-button:active {
     background-color: #6bb36b;
 }
+
+.delete-button {
+    background-color: transparent;
+    width: 150px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: solid;
+    border-radius: 10px;
+    border-color: #b4a200;
+}
+
+.delete-button:hover,
+.delete-button:active {
+    background-color: #b4a200;
+}
+
