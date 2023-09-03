@@ -1,4 +1,3 @@
-import './LoginPopup.css'
 import {useContext} from 'react';
 import UserContext from '../contexts/UserContext.js'
 import PopupContext from '../contexts/PopupContext.js'
@@ -42,10 +41,10 @@ function LoginPopup() {
                 <div className="form-area">
                     <form onSubmit={login}>
                         <label htmlFor="username">Username:</label><br/>
-                        <input className="login-input" type="text" id="username" name="username" placeholder="Username"/><br/><br/>
+                        <input className="popup-input" type="text" id="username" name="username" placeholder="Username"/><br/><br/>
                         <label htmlFor="password">Password:</label><br/>
-                        <input className="login-input" type="password" id="password" name="password" placeholder="Password"/><br/><br/>
-                        <input className="submit-button" type="submit" value="Login"/>
+                        <input className="popup-input" type="password" id="password" name="password" placeholder="Password"/><br/><br/>
+                        <input className="big-green-button" type="submit" value="Login"/>
                     </form>
                 </div>
             </div>

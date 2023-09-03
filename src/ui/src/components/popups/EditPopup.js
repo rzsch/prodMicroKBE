@@ -1,4 +1,3 @@
-import './EditPopup.css'
 import {useContext} from 'react';
 import PopupContext from '../contexts/PopupContext.js'
 import ProductContext from '../contexts/ProductContext.js'
@@ -63,13 +62,13 @@ function EditPopup(props) {
                 <div className="form-area">
                     <form onSubmit={edit}>
                         <label htmlFor="name">Name:</label><br/>
-                        <input className="edit-input" type="text" id="name" name="name" defaultValue={product.name}/><br/>
+                        <input className="popup-input" type="text" id="name" name="name" defaultValue={product.name}/><br/>
                         <label htmlFor="price">Price:</label><br/>
-                        <input className="edit-input" type="number" id="price" name="price" min="0" max="99999" defaultValue={product.price}/><br/>
+                        <input className="popup-input" type="number" id="price" name="price" min="0" max="99999" defaultValue={product.price}/><br/>
                         <label htmlFor="brand">Brand:</label><br/>
-                        <input className="edit-input" type="text" id="brand" name="brand" defaultValue={product.brand}/><br/>
+                        <input className="popup-input" type="text" id="brand" name="brand" defaultValue={product.brand}/><br/>
                         <label htmlFor="size">Size:</label><br/>
-                        <input className="edit-input" type="number" id="size" name="size" min="0" step ="0.01" defaultValue={product.size}/><br/>
+                        <input className="popup-input" type="number" id="size" name="size" min="0" step ="0.01" defaultValue={product.size}/><br/>
                         Ports:
                         <div className="edit-ports">
                             <div>
@@ -98,11 +97,11 @@ function EditPopup(props) {
                             </div>
                         </div>
                         <label htmlFor="link">link:</label><br/>
-                        <textarea className="edit-input" id="link" name="link" rows="5" defaultValue={product.link}/><br/>
-                        <input className="submit-button" type="submit" value="Edit"/>
+                        <textarea className="popup-input" id="link" name="link" rows="5" defaultValue={product.link}/><br/>
+                        <input className="big-green-button" type="submit" value="Edit"/>
                     </form>
                 </div>
-                <button className="delete-button" onClick={removeFromProducts}>
+                <button className="big-yellow-button" onClick={removeFromProducts}>
                     Delete
                 </button>
             </div>

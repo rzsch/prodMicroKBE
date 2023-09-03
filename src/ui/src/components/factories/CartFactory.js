@@ -1,11 +1,13 @@
 import ItemList from './itemTemplates/ItemList.js'
-import './CartFactory.css';
 import {useContext} from 'react';
+import PopupContext from '../contexts/PopupContext.js'
 import CartContext from '../contexts/CartContext.js'
+import CheckoutPopup from '../popups/CheckoutPopup.js'
 
 function CartFactory() {
 
     const {shoppingCart, setShoppingCart} = useContext(CartContext)
+    const setPopupPlaceholder = useContext(PopupContext)
 
     let monitorsInCart = shoppingCart
 
@@ -39,6 +41,10 @@ function CartFactory() {
         setShoppingCart(emptyList)
     }
 
+    function checkout() {
+        setPopupPlaceholder(<CheckoutPopup/>)
+    }
+
     return (
         <div>
             <div className="cart-title">
@@ -47,12 +53,12 @@ function CartFactory() {
             {monitorsInCart.map(monitor=> <ItemList key={monitor.id} values={monitor} removeFromCart={removeFromCart} />)}
             <div className="cart-total">
                 Total Items: {productsInCart}
-                <button className="remove-all-from-cart" onClick={clearCart}>
+                <button className="small-button remove-all-from-cart" onClick={clearCart}>
                     remove all
                 </button>
                 <p className="cart-total-price">Total Price: {totalPrice} €</p>
             </div>
-            <button className="buy-cart">
+            <button className="big-yellow-button sidebar-button" onClick={checkout}>
                 to checkout
             </button>
         </div>

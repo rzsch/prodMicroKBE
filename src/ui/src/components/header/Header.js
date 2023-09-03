@@ -1,4 +1,6 @@
-import './Header.css';
+import '../../css/Cart.css';
+import '../../css/Sidebar.css';
+import '../../css/BurgerMenu.css';
 import CartFactory from '../factories/CartFactory.js'
 import Menu from '../menu/Menu.js'
 import {useState, useContext} from 'react';

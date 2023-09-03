@@ -1,4 +1,4 @@
-import './ItemBox.css';
+import '../../../css/Monitor.css';
 import {useContext} from 'react';
 import UserContext from '../../contexts/UserContext.js'
 import PopupContext from '../../contexts/PopupContext.js'
@@ -28,13 +28,13 @@ function ItemBox(props) {
     function addOrEditButton () {
         if (hasRightsToEdit()) {
             return (
-                <button className="edit-product" onClick={() => editProduct(props.values.id)}>
+                <button className="small-button edit-product" onClick={() => editProduct(props.values.id)}>
                     edit item
                 </button>
             );
         } else {
             return (
-                <button className="monitor-add-to-cart" onClick={() => props.addToCart(props.values.id)}>
+                <button className="small-button monitor-add-to-cart" onClick={() => props.addToCart(props.values.id)}>
                     add to cart
                 </button>
             );
@@ -68,7 +68,7 @@ function ItemBox(props) {
                 </div>
                 <div className="monitor-base">
                 </div>
-                <div className="monitor-name-and-info">
+                <div className="monitor-name">
                     {props.values.name}<br/>
                     <a href={props.values.link}>More Details</a>
                 </div>

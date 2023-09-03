@@ -44,36 +44,6 @@
     padding: 5px;
 }
 
-.monitor-add-to-cart {
-    background-color: #6bb36b;
-    color: black;
-    padding: 5px;
-    float: right;
-    margin-right: -10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.monitor-add-to-cart:hover,
-.monitor-add-to-cart:active {
-    color: white;
-}
-
-.edit-product {
-    background-color: #b4a200;
-    color: black;
-    padding: 5px;
-    float: right;
-    margin-right: -10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.edit-product:hover,
-.edit-product:active {
-    color: white;
-}
-
 .monitor-io-ports {
     color: black;
     font-size: 14px;
@@ -99,8 +69,7 @@
     margin: auto;
 }
 
-.monitor-name-and-info {
-    color: white;
+.monitor-name {
     text-align: center;
     padding: 2px;
 }

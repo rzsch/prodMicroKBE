@@ -1,4 +1,3 @@
-import './ProfileArea.css'
 import {useContext} from 'react';
 import PopupContext from '../contexts/PopupContext.js'
 import UserContext from '../contexts/UserContext.js'
@@ -34,13 +33,13 @@ function ProfileArea() {
     function getButton() {
         if(isNotLoggedIn()) {
             return (
-                <button className="login-button" onClick={login}>
+                <button className="big-green-button sidebar-button" onClick={login}>
                     Login
                 </button>
             );
         } else {
             return (
-                <button className="logout-button" onClick={logout}>
+                <button className="big-yellow-button sidebar-button" onClick={logout}>
                     Logout
                 </button>
             );

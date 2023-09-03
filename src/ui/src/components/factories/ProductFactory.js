@@ -1,5 +1,4 @@
 import ItemBox from './itemTemplates/ItemBox.js'
-import './ProductFactory.css';
 import {useContext} from 'react';
 import CartContext from '../contexts/CartContext.js'
 import ProductContext from '../contexts/ProductContext.js'

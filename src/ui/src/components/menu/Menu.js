@@ -1,4 +1,3 @@
-import './Menu.css';
 import ProfileArea from './ProfileArea.js'
 
 function Menu() {
@@ -8,13 +7,6 @@ function Menu() {
                 Profile
             </div>
             <ProfileArea/>
-            <div className="menu-title">
-                To Product List
-            </div>
-            <br/>
-            <div className="menu-title">
-                Filter
-            </div>
         </div>
     );
 }

@@ -1,4 +1,6 @@
 import './App.css';
+import './css/Buttons.css';
+import './css/Popup.css'
 import ProductFactory from './components/factories/ProductFactory.js'
 import Header from './components/header/Header.js'
 import {useState} from 'react';

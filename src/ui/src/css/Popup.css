@@ -8,16 +8,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2;
+    z-index: 1;
 }
 
 .form-container {
     background-color: #d6ff99;
     width: 260px;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .form-header {
     background-color: #6BB36B;
+    text-align: left;
 }
 
 .close-popup {
@@ -52,24 +55,18 @@
     font-size: 20px;
 }
 
-.login-input {
+.popup-input {
     width: 200px;
     padding: 5px;
     border-radius: 5px;
 }
 
-.submit-button {
-    background-color: transparent;
-    width: 150px;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    border: solid;
-    border-radius: 10px;
-    border-color: #6bb36b;
+.edit-ports {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.submit-button:hover,
-.submit-button:active {
-    background-color: #6bb36b;
+.edit-port {
+    width: 30px;
 }
