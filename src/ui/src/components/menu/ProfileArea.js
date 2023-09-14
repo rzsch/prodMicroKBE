@@ -2,11 +2,18 @@ import {useContext} from 'react';
 import PopupContext from '../contexts/PopupContext.js'
 import UserContext from '../contexts/UserContext.js'
 import LoginPopup from '../popups/LoginPopup.js'
+import EditPopup from '../popups/EditPopup.js'
 
 function ProfileArea() {
 
     const {currentUser, setCurrentUser} = useContext(UserContext)
     const setPopupPlaceholder = useContext(PopupContext)
+
+    function addProduct() {
+        const noValidId = -1
+        setPopupPlaceholder(<EditPopup idOfProductToEdit={noValidId}/>)
+    }
+
 
     function isNotLoggedIn() {
         let rightsIfNotLoggedIn = "none"
@@ -30,7 +37,7 @@ function ProfileArea() {
         setCurrentUser({id: 1, name: "guest", rights: "none"})
     }
 
-    function getButton() {
+    function getProfileContent() {
         if(isNotLoggedIn()) {
             return (
                 <button className="big-green-button sidebar-button" onClick={login}>
@@ -39,21 +46,25 @@ function ProfileArea() {
             );
         } else {
             return (
-                <button className="big-yellow-button sidebar-button" onClick={logout}>
-                    Logout
-                </button>
+                <div>
+                    <button className="small-green-button" onClick={addProduct}>
+                        add Product
+                    </button>
+                    <button className="big-yellow-button sidebar-button" onClick={logout}>
+                        Logout
+                    </button>
+                </div>
             );
         }
     }
 
-
     let greeting = getGreeting()
-    let button = getButton()
+    let profileContent = getProfileContent()
 
     return (
         <div className="profile-container">
             <p>{greeting}</p>
-            {button}
+            {profileContent}
         </div>
     );
 }

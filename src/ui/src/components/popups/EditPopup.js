@@ -1,17 +1,47 @@
 import {useContext} from 'react';
+import UserContext from '../contexts/UserContext.js'
 import PopupContext from '../contexts/PopupContext.js'
 import ProductContext from '../contexts/ProductContext.js'
 
 function EditPopup(props) {
 
+    const {currentUser,} = useContext(UserContext)
     const setPopupPlaceholder = useContext(PopupContext)
     const {products, setProducts} = useContext(ProductContext)
 
-    const idOfProductToEdit = props.idOfProductToEdit
-    const indexInProductList = products.findIndex(product => product.id === idOfProductToEdit)
+    let idOfProductToEdit = props.idOfProductToEdit
+    const indexInProductList = products.findIndex(singleProduct => singleProduct.id === idOfProductToEdit)
 
-    let product = products[indexInProductList]
-    const seller = product.seller
+    const isEditPopup = isIdValid(idOfProductToEdit)
+
+    let seller
+    let product
+
+    function isIdValid(id) {
+        return id >= 0
+    }
+
+    if (isEditPopup) {
+        product = products[indexInProductList]
+        seller = product.seller
+    } else {
+        let freeId = getFreeId()
+        seller = currentUser.name
+        product = {id: freeId, name: "", price: 0, brand: "", size: 0, hdmi: 0, dp: 0, vga: 0, dvi: 0, usb: 0, aux: 0, link: "", seller: seller}
+        idOfProductToEdit = product.id
+    }
+
+    function getFreeId() {
+        let idToTest = 1
+        products.every(function (singleProduct) {
+            if (idToTest === singleProduct.id) {
+                idToTest++
+                return true
+            }
+            return false
+        });
+        return idToTest
+    }
 
     function generateEntry(eventTarget) {
         let entry = {}
@@ -31,12 +61,25 @@ function EditPopup(props) {
         return entry
     }
 
-    const edit = (event) => {
-        event.preventDefault()
-        const newEntry = generateEntry(event.target)
+    function edit(newEntry) {
         const newProductList = products.slice(0)
         newProductList[indexInProductList] = newEntry
         setProducts(newProductList)
+    }
+
+    function add(newEntry) {
+        console.log(newEntry)
+        products.push(newEntry)
+    }
+
+    const submit = (event) => {
+        event.preventDefault()
+        const newEntry = generateEntry(event.target)
+        if(isEditPopup){
+            edit(newEntry)
+        } else {
+            add(newEntry)
+        }
         setPopupPlaceholder(null)
     }
 
@@ -50,6 +93,27 @@ function EditPopup(props) {
         setPopupPlaceholder(null)
     }
 
+    function getDeleteButton() {
+        if(isEditPopup) {
+            return (
+                <button className="big-yellow-button" onClick={removeFromProducts}>
+                    Delete
+                </button>
+            );
+        }
+    }
+
+    function getSubmitButton() {
+        if(isEditPopup) {
+            return <input className="big-green-button" type="submit" value="Edit"/>
+        } else {
+            return <input className="big-green-button" type="submit" value="Add"/>
+        }
+    }
+
+    let deleteButton = getDeleteButton()
+    let submitButton = getSubmitButton()
+
     return (
         <div className="blurred-background">
             <div className="form-container">
@@ -60,7 +124,7 @@ function EditPopup(props) {
                     </button>
                 </div>
                 <div className="form-area">
-                    <form onSubmit={edit}>
+                    <form onSubmit={submit}>
                         <label htmlFor="name">Name:</label><br/>
                         <input className="popup-input" type="text" id="name" name="name" defaultValue={product.name}/><br/>
                         <label htmlFor="price">Price:</label><br/>
@@ -98,12 +162,10 @@ function EditPopup(props) {
                         </div>
                         <label htmlFor="link">link:</label><br/>
                         <textarea className="popup-input" id="link" name="link" rows="5" defaultValue={product.link}/><br/>
-                        <input className="big-green-button" type="submit" value="Edit"/>
+                        {submitButton}
                     </form>
                 </div>
-                <button className="big-yellow-button" onClick={removeFromProducts}>
-                    Delete
-                </button>
+                {deleteButton}
             </div>
         </div>
     );
