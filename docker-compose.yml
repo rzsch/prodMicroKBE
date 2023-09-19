@@ -60,6 +60,18 @@ services:
     environment:
       - WATCHPACK_POLLING=true
 
+  sso:
+    image: quay.io/keycloak/keycloak:22.0.3
+    container_name: keycloak
+    ports:
+      - "8081:8081"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command:
+      - start-dev
+      - --http-port=8081
+
 networks:
   internal:
     name: internal

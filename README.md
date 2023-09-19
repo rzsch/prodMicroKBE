@@ -8,6 +8,9 @@
 ### RabbitMQ
 * rabbitmq web view: http://localhost:15672
 
+### Keycloak
+* keycloak dev login: http://localhost:8081/admin
+
 ### TestController to send messages
 * TestController path: com.example.demo.port.user.controller
   * localhost:8080/product-queue 
