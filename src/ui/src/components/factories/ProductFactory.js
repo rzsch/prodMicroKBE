@@ -1,7 +1,7 @@
-import ItemBox from './itemTemplates/ItemBox.js'
+import ItemBox from './itemTemplates/ItemBox.js';
 import {useContext} from 'react';
-import CartContext from '../contexts/CartContext.js'
-import ProductContext from '../contexts/ProductContext.js'
+import CartContext from '../contexts/CartContext.js';
+import ProductContext from '../contexts/ProductContext.js';
 
 
 function ProductFactory() {

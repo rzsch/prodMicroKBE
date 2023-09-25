@@ -1,6 +1,6 @@
 import {useContext} from 'react';
-import UserContext from '../contexts/UserContext.js'
-import PopupContext from '../contexts/PopupContext.js'
+import UserContext from '../contexts/UserContext.js';
+import PopupContext from '../contexts/PopupContext.js';
 
 function LoginPopup() {
 

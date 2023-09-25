@@ -1,8 +1,8 @@
-import ItemList from './itemTemplates/ItemList.js'
+import ItemList from './itemTemplates/ItemList.js';
 import {useContext} from 'react';
-import PopupContext from '../contexts/PopupContext.js'
-import CartContext from '../contexts/CartContext.js'
-import CheckoutPopup from '../popups/CheckoutPopup.js'
+import PopupContext from '../contexts/PopupContext.js';
+import CartContext from '../contexts/CartContext.js';
+import CheckoutPopup from '../popups/CheckoutPopup.js';
 
 function CartFactory() {
 

@@ -1,7 +1,7 @@
 import {useContext} from 'react';
-import UserContext from '../contexts/UserContext.js'
-import PopupContext from '../contexts/PopupContext.js'
-import ProductContext from '../contexts/ProductContext.js'
+import UserContext from '../contexts/UserContext.js';
+import PopupContext from '../contexts/PopupContext.js';
+import ProductContext from '../contexts/ProductContext.js';
 
 function EditPopup(props) {
 

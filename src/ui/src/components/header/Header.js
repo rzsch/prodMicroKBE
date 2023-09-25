@@ -1,10 +1,10 @@
 import '../../css/Cart.css';
 import '../../css/Sidebar.css';
 import '../../css/BurgerMenu.css';
-import CartFactory from '../factories/CartFactory.js'
-import Menu from '../menu/Menu.js'
+import CartFactory from '../factories/CartFactory.js';
+import Menu from '../menu/Menu.js';
 import {useState, useContext} from 'react';
-import CartContext from '../contexts/CartContext.js'
+import CartContext from '../contexts/CartContext.js';
 
 function Header(props) {
 

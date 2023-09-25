@@ -1,4 +1,4 @@
-import ProfileArea from './ProfileArea.js'
+import ProfileArea from './ProfileArea.js';
 
 function Menu() {
     return (

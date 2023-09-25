@@ -1,8 +1,8 @@
 import {useContext} from 'react';
-import PopupContext from '../contexts/PopupContext.js'
-import UserContext from '../contexts/UserContext.js'
-import LoginPopup from '../popups/LoginPopup.js'
-import EditPopup from '../popups/EditPopup.js'
+import PopupContext from '../contexts/PopupContext.js';
+import UserContext from '../contexts/UserContext.js';
+import LoginPopup from '../popups/LoginPopup.js';
+import EditPopup from '../popups/EditPopup.js';
 
 function ProfileArea() {
 

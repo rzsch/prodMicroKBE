@@ -1,8 +1,8 @@
 import '../../../css/Monitor.css';
 import {useContext} from 'react';
-import UserContext from '../../contexts/UserContext.js'
-import PopupContext from '../../contexts/PopupContext.js'
-import EditPopup from '../../popups/EditPopup.js'
+import UserContext from '../../contexts/UserContext.js';
+import PopupContext from '../../contexts/PopupContext.js';
+import EditPopup from '../../popups/EditPopup.js';
 
 function ItemBox(props) {
 
