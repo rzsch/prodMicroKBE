@@ -1,13 +1,32 @@
-import {useContext} from 'react';
+import React, { useContext, useState } from 'react';
 import PopupContext from '../contexts/PopupContext.js';
 
 function LoginPopup() {
+    const setPopupPlaceholder = useContext(PopupContext);
 
-    const setPopupPlaceholder = useContext(PopupContext)
+    // State variables
+    const [cardNumber, setCardNumber] = useState('');
+    const [message, setMessage] = useState('');
 
-    function closePopup() {
-        setPopupPlaceholder(null)
-    }
+    // Function to handle card number input change
+    const handleCardNumberChange = (event) => {
+        const { value } = event.target;
+        setCardNumber(value);
+    };
+
+    // Function to validate the card number
+    const validateCardNumber = () => {
+        if (cardNumber.length === 10 && /^\d+$/.test(cardNumber)) {
+            setMessage('Bought');
+        } else {
+            setMessage('Card number doesn\'t exist');
+        }
+    };
+
+    // Function to close the popup
+    const closePopup = () => {
+        setPopupPlaceholder(null);
+    };
 
     return (
         <div className="blurred-background">
@@ -19,7 +38,16 @@ function LoginPopup() {
                     </button>
                 </div>
                 <div className="form-area">
-                    todo
+                    <input
+                        type="text"
+                        placeholder="Enter card number"
+                        value={cardNumber}
+                        onChange={handleCardNumberChange}
+                    />
+                    <button className="buy-button" onClick={validateCardNumber}>
+                        Buy
+                    </button>
+                    <div className="message">{message}</div>
                 </div>
             </div>
         </div>
