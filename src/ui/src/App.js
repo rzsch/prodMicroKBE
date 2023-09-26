@@ -8,6 +8,7 @@ import CartContext from './components/contexts/CartContext.js';
 import ProductContext from './components/contexts/ProductContext.js';
 import UserContext from './components/contexts/UserContext.js';
 import PopupContext from './components/contexts/PopupContext.js';
+
 function App() {
     const productList = [
         {id: 1, name: 'ASUS ExpertCenter C2223HE', price: 270, brand: 'Asus', size: 21.45, hdmi: 1, dp: 0, vga: 0, dvi: 0, usb: 0, aux: 1, link: "https://www.asus.com/displays-desktops/monitors/business/asus-expertcenter-c2223he/", seller: "asus"},
