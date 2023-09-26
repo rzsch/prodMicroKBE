@@ -21,8 +21,16 @@ services:
     image: rabbitmq:3.11-management
     hostname: rabbitmq-container
     ports:
-      - "15672:15672"
       - "5672:5672"
+      - "15672:15672"
+    environment:
+      # The location of the RabbitMQ server.  "amqp" is the protocol;
+      # "rabbitmq" is the hostname.  Note that there is not a guarantee
+      # that the server will start first!  Telling the pika client library
+      # to try multiple times gets around this ordering issue.
+      AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
+      RABBITMQ_DEFAULT_USER: "user"
+      RABBITMQ_DEFAULT_PASS: "user"
     networks:
       - internal
 
