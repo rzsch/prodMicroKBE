@@ -6,7 +6,7 @@ public interface IProductService
 {
     void createProduct (Product product);
 
-    void updateProduct (Product product, int id);
+    boolean updateProduct (Product product, int id);
 
     void deleteProduct (int id);
 

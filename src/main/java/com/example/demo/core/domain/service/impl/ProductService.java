@@ -22,12 +22,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void updateProduct(Product product, int id) {
+    public boolean updateProduct(Product product, int id) {
 
         Product productToUpdate = this.getProduct(id);
 
         if (productToUpdate == null) {
-            throw new ProductNotFoundException(id);
+            return false;
         }
 
         productToUpdate.setName(product.getName());
@@ -44,6 +44,7 @@ public class ProductService implements IProductService {
         productToUpdate.setSeller(product.getSeller());
 
         productRepository.save(productToUpdate);
+        return true;
     }
 
     @Override
