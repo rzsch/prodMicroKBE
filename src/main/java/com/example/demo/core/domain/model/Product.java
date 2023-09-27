@@ -49,6 +49,8 @@ public class Product {
 
     //constructor
 
+    public Product(){}
+
     public Product(String name, Float price, String brand, Float size, Integer hdmi, Integer dp, Integer vga, Integer dvi, Integer usb, Integer aux, String link, String seller) {
         this.name = name;
         this.price = price;

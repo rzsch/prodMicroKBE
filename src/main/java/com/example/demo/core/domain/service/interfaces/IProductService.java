@@ -6,9 +6,9 @@ public interface IProductService
 {
     void createProduct (Product product);
 
-    void updateProduct (Product product);
+    void updateProduct (Product product, int id);
 
-    void deleteProduct (Product product);
+    void deleteProduct (int id);
 
     Product getProduct(int id);
 

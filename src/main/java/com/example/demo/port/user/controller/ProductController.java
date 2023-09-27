@@ -31,16 +31,16 @@ public class ProductController {
         return product;
     }
 
-    @PutMapping(path = "/product")
-    public @ResponseBody String update() {
+    @PutMapping(path = "/product/{id}")
+    public @ResponseBody void update(@RequestBody Product product, @PathVariable int id) {
 
-        return null;
+        productService.updateProduct(product, id);
     }
 
-    @DeleteMapping(path = "/product")
-    public @ResponseBody String delete() {
+    @DeleteMapping(path = "/product/{id}")
+    public @ResponseBody void delete(@PathVariable int id) {
 
-        return null;
+        productService.deleteProduct(id);
     }
 
     @GetMapping("/products")

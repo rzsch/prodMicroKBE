@@ -3,6 +3,7 @@ package com.example.demo.core.domain.service.impl;
 import com.example.demo.core.domain.model.Product;
 import com.example.demo.core.domain.service.interfaces.IProductRepository;
 import com.example.demo.core.domain.service.interfaces.IProductService;
+import com.example.demo.port.user.exception.ProductNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,21 +22,40 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void updateProduct(Product product) {
+    public void updateProduct(Product product, int id) {
 
-        productRepository.save(product);
+        Product productToUpdate = this.getProduct(id);
+
+        if (productToUpdate == null) {
+            throw new ProductNotFoundException(id);
+        }
+
+        productToUpdate.setName(product.getName());
+        productToUpdate.setPrice(product.getPrice());
+        productToUpdate.setBrand(product.getBrand());
+        productToUpdate.setSize(product.getSize());
+        productToUpdate.setHdmi(product.getHdmi());
+        productToUpdate.setDp(product.getDp());
+        productToUpdate.setVga(product.getVga());
+        productToUpdate.setDvi(product.getDvi());
+        productToUpdate.setUsb(product.getUsb());
+        productToUpdate.setAux(product.getAux());
+        productToUpdate.setLink(product.getLink());
+        productToUpdate.setSeller(product.getSeller());
+
+        productRepository.save(productToUpdate);
     }
 
     @Override
-    public void deleteProduct(Product product) {
+    public void deleteProduct(int id) {
 
-        productRepository.delete(product);
+        productRepository.deleteById(id);
     }
 
     @Override
     public Product getProduct(int id) {
 
-        return null;
+        return productRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -43,5 +63,6 @@ public class ProductService implements IProductService {
 
         return productRepository.findAll();
     }
+
 
 }
