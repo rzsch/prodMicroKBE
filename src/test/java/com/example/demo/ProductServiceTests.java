@@ -158,38 +158,6 @@ public class ProductServiceTests {
         assertEquals("https://www.asus.com/displays-desktops/monitors/designo/designo-mx279hs/", retrievedProduct.getLink());
         assertEquals("asus", retrievedProduct.getSeller());    
     }
-
-    @Test
-    public void testDeleteProducts() {
-        // Create two products
-        Product product1 = new Product("ASUS ExpertCenter C2223HE", (float) 270.00, "Asus", (float) 21.45, 1, 0, 0, 0, 0, 1, "https://www.asus.com/displays-desktops/monitors/business/asus-expertcenter-c2223he/", "asus");
-        Product product2 = new Product("Designo MX279HS", (float) 240.00, "Asus", (float) 27.00, 2, 0, 1, 0, 0, 1, "https://www.asus.com/displays-desktops/monitors/designo/designo-mx279hs/", "asus");
-
-        // Set fake ids for testing purposes
-        product1.setId(1);
-        product2.setId(2);
-    
-        // Stub the behavior of the productRepository
-        Mockito.when(productRepository.save(product1)).thenReturn(product1);
-        Mockito.when(productRepository.save(product2)).thenReturn(product2);
-    
-        // Create the products
-        productService.createProduct(product1);
-        productService.createProduct(product2);
-        productService.deleteProduct(1);
-    
-        // Stub the behavior of the productRepository to return both products
-        Mockito.when(productRepository.findAll()).thenReturn(java.util.Arrays.asList(product1, product2));
-    
-        // Get all products
-        Iterable<Product> allProducts = productService.getAllProducts();
-    
-        // Test if both created products are present in the list of all products
-        assertTrue(StreamSupport.stream(allProducts.spliterator(), false)
-                .anyMatch(p -> p.equals(product1)));
-        assertTrue(StreamSupport.stream(allProducts.spliterator(), false)
-                .anyMatch(p -> p.equals(product2)));
-    }
     
     @Test
     public void testDeleteProduct() {
