@@ -6,7 +6,9 @@ public interface IProductService
 {
     void createProduct (Product product);
 
-    void updateProduct (Product product, int id);
+    boolean updateProduct (Product product, int id);
+
+    boolean editProduct (Product product, int id, String name, Float price, String brand, Float size, Integer hdmi, Integer dp, Integer vga, Integer dvi, Integer usb, Integer aux, String link, String seller);
 
     void deleteProduct (int id);
 
