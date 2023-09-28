@@ -24,7 +24,7 @@ function ProfileArea() {
         if(isNotLoggedIn()) {
             return "Currently not logged in."
         } else {
-            let returnVariable = "Welcome " + currentUser.name + "!"
+            let returnVariable = "Welcome, " + currentUser.name + "!"
             return returnVariable
         }
     }
@@ -47,8 +47,18 @@ function ProfileArea() {
         } else {
             return (
                 <div>
+                    {currentUser.rights !=="none" && (
+                        <div className='gif-container'>
+                        <img src="https://media.giphy.com/media/11shDO8NnZDYpa/giphy.gif" alt="admin-hello" />
+                        </div>
+                    )}
+                    {currentUser.rights ==="none" && (
+                        <div className='gif-container'>
+                        <img src="https://media.giphy.com/media/fTI9mBoWLef8k/giphy.gif" alt="user-hello" />
+                        </div>
+                    )}
                     <button className="small-green-button" onClick={addProduct}>
-                        add Product
+                        Add Item to Product List
                     </button>
                     <button className="big-yellow-button sidebar-button" onClick={logout}>
                         Logout

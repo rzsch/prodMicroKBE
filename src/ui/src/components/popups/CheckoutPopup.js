@@ -47,7 +47,11 @@ function LoginPopup() {
                     <button className="buy-button" onClick={validateCardNumber}>
                         Buy
                     </button>
-                    <div className="message">{message}</div>
+                    {message === 'Bought' && (
+                    <><div className="gif-container">
+                            <img src="https://i.imgur.com/L9zEGPq.gif" alt="money" />
+                        </div><div className="message">{message}</div></>
+                    )}
                 </div>
             </div>
         </div>

@@ -9,7 +9,10 @@ function ItemList(props) {
                     <a href={props.values.link}>More Details</a>
                 </div>
                 <button className="small-button remove-from-cart" onClick={() => props.removeFromCart(props.values.id)}>
-                    -1
+                    -
+                </button>
+                <button className="small-button add-to-cart" onClick={() => props.addToCart(props.values.id)}>
+                    +
                 </button>
             </div>
         </div>

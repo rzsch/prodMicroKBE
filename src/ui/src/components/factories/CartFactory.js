@@ -36,6 +36,15 @@ function CartFactory() {
 
     }
 
+    function addToCart(idToAdd) {
+        let indexInCart = shoppingCart.findIndex(product => product.id === idToAdd)
+        let amountInCart = shoppingCart[indexInCart].amount
+        let newShoppingCart = shoppingCart.slice(0)
+
+        newShoppingCart[indexInCart].amount = amountInCart + 1
+        setShoppingCart(newShoppingCart)
+    }
+
     function clearCart() {
         let emptyList = [];
         setShoppingCart(emptyList)
@@ -50,7 +59,7 @@ function CartFactory() {
             <div className="cart-title">
                 Cart
             </div>
-            {monitorsInCart.map(monitor=> <ItemList key={monitor.id} values={monitor} removeFromCart={removeFromCart} />)}
+            {monitorsInCart.map(monitor=> <ItemList key={monitor.id} values={monitor} removeFromCart={removeFromCart} addToCart={addToCart} />)}
             <div className="cart-total">
                 Total Items: {productsInCart}
                 <button className="small-button remove-all-from-cart" onClick={clearCart}>
@@ -59,7 +68,7 @@ function CartFactory() {
                 <p className="cart-total-price">Total Price: {totalPrice} €</p>
             </div>
             <button className="big-yellow-button sidebar-button" onClick={checkout}>
-                to checkout
+                checkout
             </button>
         </div>
    );

@@ -48,7 +48,8 @@
 }
 
 .cart-price {
-    color: #b4a200;
+    color: #000000;
+    padding: 10px;
 }
 
 .cart-total {
@@ -63,6 +64,6 @@
 }
 
 .cart-total-price {
-    color: #c1af00;
+    color: #000000;
     text-align: center;
 }
