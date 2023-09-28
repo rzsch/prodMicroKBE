@@ -1,17 +1,13 @@
 package com.example.demo.port.user.controller;
 
 import com.example.demo.core.domain.model.Product;
-import com.example.demo.core.domain.service.interfaces.IProductService;
 import com.example.demo.port.user.exception.ProductNotFoundException;
-
 import com.example.demo.port.user.producer.ProductProducer;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@Slf4j
 public class ProductController {
 
     @Autowired

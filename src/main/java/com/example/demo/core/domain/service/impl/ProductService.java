@@ -11,7 +11,7 @@ public class ProductService implements IProductService {
 
     private final IProductRepository productRepository;
 
-    ProductService(IProductRepository productRepository){
+    public ProductService(IProductRepository productRepository){
 
         this.productRepository = productRepository;
     }

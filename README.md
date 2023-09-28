@@ -16,6 +16,10 @@
   * localhost:8080/product-queue 
   * localhost:8080/product-update-queue
 
+### Swagger Api Doc
+* Api Doc: http://localhost:8080/v3/api-docs
+* Swagger: http://localhost:8080/swagger-ui/index.html
+
 
 ## Userful Commands
 #### create a new repository on the command line
