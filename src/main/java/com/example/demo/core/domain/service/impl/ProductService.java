@@ -11,7 +11,7 @@ public class ProductService implements IProductService {
 
     private final IProductRepository productRepository;
 
-    ProductService(IProductRepository productRepository){
+    public ProductService(IProductRepository productRepository){
 
         this.productRepository = productRepository;
     }
@@ -22,12 +22,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void updateProduct(Product product, int id) {
+    public boolean updateProduct(Product product, int id) {
 
         Product productToUpdate = this.getProduct(id);
 
         if (productToUpdate == null) {
-            throw new ProductNotFoundException(id);
+            return false;
         }
 
         productToUpdate.setName(product.getName());
@@ -44,6 +44,7 @@ public class ProductService implements IProductService {
         productToUpdate.setSeller(product.getSeller());
 
         productRepository.save(productToUpdate);
+        return true;
     }
 
     @Override
@@ -62,6 +63,29 @@ public class ProductService implements IProductService {
     public Iterable<Product> getAllProducts() {
 
         return productRepository.findAll();
+    }
+
+    @Override
+    public boolean editProduct(Product product, int id, String name, Float price, String brand, Float size, Integer hdmi, Integer dp, Integer vga, Integer dvi, Integer usb, Integer aux, String link, String seller) {
+        if (product == null) {
+            return false;
+        }
+        product.setId(id);
+        product.setName(name);
+        product.setPrice(price);
+        product.setBrand(brand);
+        product.setSize(size);
+        product.setHdmi(hdmi);
+        product.setDp(dp);
+        product.setVga(vga);
+        product.setDvi(dvi);
+        product.setUsb(usb);
+        product.setAux(aux);
+        product.setLink(link);
+        product.setSeller(seller);
+        productRepository.save(product);
+
+        return true;        
     }
 
 
