@@ -4,6 +4,7 @@ import com.example.demo.core.domain.model.Product;
 import com.example.demo.core.domain.service.impl.ProductService;
 import com.example.demo.core.domain.service.interfaces.IProductRepository;
 
+import com.example.demo.core.domain.service.interfaces.IProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,7 +15,7 @@ import java.util.stream.StreamSupport;
 
 public class ProductServiceTests {
 
-    private ProductService productService;
+    private IProductService productService;
     private IProductRepository productRepository;
 
     @BeforeEach
