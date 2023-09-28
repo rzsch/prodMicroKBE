@@ -14,8 +14,17 @@ public class RabbitMQConfig {
     @Value("product")
     private String queue;
 
-    @Value("item")
-    private String itemQueue;
+    @Value("create_product")
+    private String createQueue;
+
+    @Value("read_product")
+    private String readQueue;
+
+    @Value("update_product")
+    private String updateQueue;
+
+    @Value("delete_product")
+    private String deleteQueue;
 
     @Value("product_exchange")
     private String exchange;
@@ -23,8 +32,17 @@ public class RabbitMQConfig {
     @Value("product_routing_key")
     private String routingKey;
 
-    @Value("item_routing_key")
-    private String itemRoutingKey;
+    @Value("create_routing_key")
+    private String createRoutingKey;
+
+    @Value("read_routing_key")
+    private String readRoutingKey;
+
+    @Value("update_routing_key")
+    private String updateRoutingKey;
+
+    @Value("delete_routing_key")
+    private String deleteRoutingKey;
 
     @Bean
     public Queue queue(){
@@ -32,8 +50,23 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public Queue itemQueue(){
-        return new Queue(itemQueue);
+    public Queue createQueue(){
+        return new Queue(createQueue);
+    }
+
+    @Bean
+    public Queue readQueue(){
+        return new Queue(readQueue);
+    }
+
+    @Bean
+    public Queue updateQueue(){
+        return new Queue(updateQueue);
+    }
+
+    @Bean
+    public Queue deleteQueue(){
+        return new Queue(deleteQueue);
     }
 
     @Bean
@@ -50,11 +83,35 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public Binding itemBinding(){
+    public Binding createBinding(){
         return BindingBuilder
-                .bind(itemQueue())
+                .bind(createQueue())
                 .to(exchange())
-                .with(itemRoutingKey);
+                .with(createRoutingKey);
+    }
+
+    @Bean
+    public Binding readBinding(){
+        return BindingBuilder
+                .bind(readQueue())
+                .to(exchange())
+                .with(readRoutingKey);
+    }
+
+    @Bean
+    public Binding updateBinding(){
+        return BindingBuilder
+                .bind(updateQueue())
+                .to(exchange())
+                .with(updateRoutingKey);
+    }
+
+    @Bean
+    public Binding deleteBinding(){
+        return BindingBuilder
+                .bind(deleteQueue())
+                .to(exchange())
+                .with(deleteRoutingKey);
     }
 
 }

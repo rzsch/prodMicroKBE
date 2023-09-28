@@ -134,8 +134,9 @@ public class ProductServiceTests {
     
         // Create the product
         productService.createProduct(product1);
-        
-        boolean result = productService.editProduct(product1, 2, "Designo MX279HS", (float) 240.00, "Asus", (float) 27.00, 2, 0, 1, 0, 0, 1, "https://www.asus.com/displays-desktops/monitors/designo/designo-mx279hs/", "asus");
+
+        Product product2 = new Product("Designo MX279HS", (float) 240.00, "Asus", (float) 27.00, 2, 0, 1, 0, 0, 1, "https://www.asus.com/displays-desktops/monitors/designo/designo-mx279hs/", "asus");
+        boolean result = productService.updateProduct(product2, 1);
         Mockito.when(productRepository.save(product1)).thenReturn(product1);
         Mockito.when(productRepository.findById(product1.getId())).thenReturn(java.util.Optional.of(product1));
     
@@ -144,7 +145,7 @@ public class ProductServiceTests {
     
         // Test if the retrieved product is the same as the created product
         assertTrue(result);
-        assertEquals(2, retrievedProduct.getId());
+        assertEquals(1, retrievedProduct.getId());
         assertEquals("Designo MX279HS", retrievedProduct.getName());
         assertEquals((float) 240.00, retrievedProduct.getPrice());
         assertEquals("Asus", retrievedProduct.getBrand());
