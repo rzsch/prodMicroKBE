@@ -25,7 +25,6 @@ public class ProductControllerTests {
     public void testCreateandGetProduct() {
         Product product = new Product("Test Product", 100.00f, "Brand 1", 10.0f, 1, 0, 0, 0, 0, 1, "https://example.com/test", "seller1");
         product.setId(1);
-
         productController.create(product);
 
         Product testProduct = productController.getProduct(1);
@@ -55,9 +54,8 @@ public class ProductControllerTests {
         Product product = new Product("Product", 100.00f, "Brand 1", 10.0f, 1, 0, 0, 0, 0, 1, "https://example.com/test", "asus");
         product.setId(1);
         Product product2 = new Product("Test Product", 100.00f, "Brand 1", 10.0f, 1, 0, 0, 0, 0, 1, "https://example.com/test", "seller1");
-        product.setId(2);
+        product.setId(1);
         productController.create(product);
-        productController.create(product2);
 
         productController.update(product2, 1);
 
@@ -116,4 +114,5 @@ public class ProductControllerTests {
         assertTrue(product1Found);
         assertTrue(product2Found);
     }
+
 }

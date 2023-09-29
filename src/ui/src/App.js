@@ -29,7 +29,7 @@ function App() {
     const [currentUser, setCurrentUser] = useState({id: 1, name: "guest", rights: "none"})
     useEffect(() => {
         let urlParamUser = window.location.search.split("user=")[1];
-        if(!urlParamUser == "") {
+        if(!urlParamUser === "") {
             console.log(urlParamUser)
             if(urlParamUser === "admin") {
                 setCurrentUser({id: 3, name: "admin", rights: "edit-all"})
