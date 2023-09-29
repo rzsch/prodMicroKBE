@@ -35,7 +35,7 @@ function ProfileArea() {
     }
 
     function logout() {
-        window.location.replace("http://localhost:3000")
+        window.location.replace("http://localhost:8080/logout")
         setCurrentUser({id: 1, name: "guest", rights: "none"})
     }
 
