@@ -3,20 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+/*
 import { ReactKeycloakProvider } from '@react-keycloak/web'
 import keycloak from './keycloak'
 
 const keycloakProviderInitConfig = {
     onLoad: 'login-required',
 }
+*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ReactKeycloakProvider authClient={keycloak} initConfig={keycloakProviderInitConfig}>
+  //<ReactKeycloakProvider authClient={keycloak} initConfig={keycloakProviderInitConfig}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-  </ReactKeycloakProvider>
+  //</ReactKeycloakProvider>
 
 );
 

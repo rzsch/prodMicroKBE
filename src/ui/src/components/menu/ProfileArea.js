@@ -30,10 +30,12 @@ function ProfileArea() {
     }
 
     function login() {
+        window.location.replace("http://localhost:8080/react")
         setPopupPlaceholder(<LoginPopup/>)
     }
 
     function logout() {
+        window.location.replace("http://localhost:3000")
         setCurrentUser({id: 1, name: "guest", rights: "none"})
     }
 
